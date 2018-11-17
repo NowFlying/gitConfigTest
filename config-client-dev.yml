@@ -1,1 +1,24 @@
-democonfigclient.message=test11111
+server:
+  port: 8881
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+management:
+    security:
+        enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8889/eureka/
+democonfigclient: 
+   message: test11111
